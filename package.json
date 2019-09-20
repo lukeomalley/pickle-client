@@ -8,8 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.1",
+    "@apollo/react-ssr": "^3.1.1",
+    "@types/react": "^16.9.2",
+    "apollo-boost": "^0.4.4",
+    "graphql": "^14.5.6",
+    "graphql-tag": "^2.10.1",
+    "install": "^0.13.0",
     "next": "9.0.6",
+    "next-apollo": "^3.1.4",
+    "next-server": "^9.0.5",
+    "npm": "^6.11.3",
     "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react-apollo": "^3.1.1",
+    "react-dom": "16.9.0",
+    "react-icons": "^3.7.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6"
   }
 }
