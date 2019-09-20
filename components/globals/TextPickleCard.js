@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import UserBar from './UserBar';
 import PickleOptions from '../globals/PickleOptions';
+import PickleComments from './PickleComments';
+import CommentForm from './CommentForm';
 import Hr from './HorizontalRule';
 import { setRem, sizes } from '../../lib/styles';
 
@@ -32,6 +34,8 @@ const TextPickleCard = ({ pickle }) => {
       <Hr />
       <p className="description">{pickle.description}</p>
       <PickleOptions options={pickle.options} />
+      <PickleComments comments={pickle.comments} />
+      <CommentForm />
     </TextPickleCardWrapper>
   );
 };

@@ -18,6 +18,14 @@ export default gql`
         username
         imgUrl
       }
+      comments {
+        id
+        text
+        user {
+          id
+          username
+        }
+      }
     }
   }
 `;
