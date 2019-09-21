@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { setRem } from '../../lib/styles';
+import { setRem, sizes } from '../../lib/styles';
 
 const UserProfileHeaderWrapper = styled.div`
   display: grid;
@@ -25,6 +25,20 @@ const UserProfileHeaderWrapper = styled.div`
     .username {
       margin-bottom: ${setRem(20)};
       font-size: ${setRem(30)};
+    }
+  }
+
+  @media (max-width: ${sizes.tablet}px) {
+    width: 90%;
+    margin: 0 auto;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-gap: ${setRem(20)};
+
+    .details {
+      justify-self: center;
+      text-align: center;
+      margin-bottom: ${setRem(20)};
     }
   }
 `;
