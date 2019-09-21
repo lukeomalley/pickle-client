@@ -3,14 +3,13 @@ import { useQuery } from '@apollo/react-hooks';
 import styled from 'styled-components';
 
 import { setRem } from '../../lib/styles';
+import ALL_PICKLE_QUERY from '../../queries/ALL_PICKLE_QUERY';
+import TextPickleCard from '../globals/TextPickleCard';
 
 const NewsFeedWrapper = styled.div`
   display: grid;
   grid-gap: ${setRem(20)};
 `;
-
-import ALL_PICKLE_QUERY from '../../queries/ALL_PICKLE_QUERY';
-import TextPickleCard from '../globals/TextPickleCard';
 
 const NewsFeedContainer = () => {
   const { loading, data, error } = useQuery(ALL_PICKLE_QUERY);
