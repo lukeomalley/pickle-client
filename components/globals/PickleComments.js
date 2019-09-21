@@ -6,15 +6,13 @@ import Comment from './Comment';
 const PickleCommentsWrapper = styled.div`
   background: ${props => props.theme.mainWhite};
   margin-left: ${setRem(3)};
-  margin-bottom: ${setRem(16)};
+  margin-bottom: ${setRem(8)};
 `;
 
 const PickleComments = ({ comments }) => {
   return (
     <PickleCommentsWrapper>
-      {comments.map(comment => (
-        <Comment comment={comment} />
-      ))}
+      {comments.length === 0 ? null : comments.map(comment => <Comment comment={comment} />)}
     </PickleCommentsWrapper>
   );
 };

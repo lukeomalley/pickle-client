@@ -1,5 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import styled from 'styled-components';
+
+import { setRem } from '../../lib/styles';
+
+const NewsFeedWrapper = styled.div`
+  display: grid;
+  grid-gap: ${setRem(20)};
+`;
 
 import ALL_PICKLE_QUERY from '../../queries/ALL_PICKLE_QUERY';
 import TextPickleCard from '../globals/TextPickleCard';
@@ -9,11 +17,11 @@ const NewsFeedContainer = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error</div>;
   return (
-    <div>
+    <NewsFeedWrapper>
       {data.pickles.map(pickle => (
         <TextPickleCard key={pickle.id} pickle={pickle} />
       ))}
-    </div>
+    </NewsFeedWrapper>
   );
 };
 

@@ -35,6 +35,7 @@ const TextPickleCard = ({ pickle }) => {
       <p className="description">{pickle.description}</p>
       <PickleOptions options={pickle.options} />
       <PickleComments comments={pickle.comments} />
+      <Hr />
       <CommentForm />
     </TextPickleCardWrapper>
   );
