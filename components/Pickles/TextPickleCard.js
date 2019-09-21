@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import UserBar from './UserBar';
-import PickleOptions from '../globals/PickleOptions';
+import PickleOptions from './PickleOptions';
 import PickleComments from './PickleComments';
 import CommentForm from './CommentForm';
-import Hr from './HorizontalRule';
+import Hr from '../globals/HorizontalRule';
 import { setRem, sizes } from '../../lib/styles';
 
 const TextPickleCardWrapper = styled.div`

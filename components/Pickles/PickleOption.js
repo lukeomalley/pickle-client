@@ -6,7 +6,7 @@ const OptionWrapper = styled.div`
   border: 1px solid ${props => props.theme.lightGrey};
   padding: ${setRem(16)} ${setRem(32)};
   cursor: pointer;
-  ${fadeIn('0%', '0%', '0%', 1)}
+  ${fadeIn('0%', '0%', '0%', 0.8)}
 
   &:hover {
     background: ${props => props.theme.lightGrey};

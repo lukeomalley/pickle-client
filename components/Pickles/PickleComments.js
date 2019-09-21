@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { setRem } from '../../lib/styles';
-import Comment from './Comment';
+import PickleComment from './PickleComment';
 
 const PickleCommentsWrapper = styled.div`
   background: ${props => props.theme.mainWhite};
@@ -14,7 +14,7 @@ const PickleComments = ({ comments }) => {
     <PickleCommentsWrapper>
       {comments.length === 0
         ? null
-        : comments.map(comment => <Comment key={comment.id} comment={comment} />)}
+        : comments.map(comment => <PickleComment key={comment.id} comment={comment} />)}
     </PickleCommentsWrapper>
   );
 };

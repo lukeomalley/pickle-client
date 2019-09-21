@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { setRem } from '../../lib/styles';
-import TextPickleCard from '../globals/TextPickleCard';
+import TextPickleCard from '../Pickles/TextPickleCard';
 
 const NewsFeedWrapper = styled.div`
   display: grid;
