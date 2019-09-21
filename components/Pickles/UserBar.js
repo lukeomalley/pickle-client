@@ -27,7 +27,7 @@ const UserBar = ({ user }) => {
   return (
     <UserBarWrapper>
       <img src={user.imgUrl} alt={user.name} />
-      <Link href={`/${user.username}`}>
+      <Link href={`/[username]`} as={`/${user.username}`}>
         <a>{user.username}</a>
       </Link>
     </UserBarWrapper>
