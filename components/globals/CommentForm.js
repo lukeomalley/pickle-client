@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { setRem } from '../../lib/styles';
@@ -22,13 +22,31 @@ const CommentFormWrapper = styled.form`
     font-size: ${setRem(16)};
     cursor: pointer;
   }
+
+  .blue {
+    color: ${props => props.theme.accentColor};
+  }
 `;
 
 const CommentForm = () => {
+  const [text, setText] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(!!text);
+    setText('');
+  };
+
+  const handleChange = e => {
+    setText(e.target.value);
+  };
+
   return (
-    <CommentFormWrapper>
-      <input type="text" placeholder="Add a comment..." />
-      <button type="submit">Post</button>
+    <CommentFormWrapper onSubmit={handleSubmit}>
+      <input type="text" placeholder="Add a comment..." value={text} onChange={handleChange} />
+      <button type="submit" disabled={!text} className={!!text && 'blue'}>
+        Post
+      </button>
     </CommentFormWrapper>
   );
 };

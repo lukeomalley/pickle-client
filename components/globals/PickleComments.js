@@ -12,7 +12,9 @@ const PickleCommentsWrapper = styled.div`
 const PickleComments = ({ comments }) => {
   return (
     <PickleCommentsWrapper>
-      {comments.length === 0 ? null : comments.map(comment => <Comment comment={comment} />)}
+      {comments.length === 0
+        ? null
+        : comments.map(comment => <Comment key={comment.id} comment={comment} />)}
     </PickleCommentsWrapper>
   );
 };
