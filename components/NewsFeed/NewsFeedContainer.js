@@ -13,7 +13,7 @@ const NewsFeedWrapper = styled.div`
 
 const NewsFeedContainer = () => {
   const { loading, data, error } = useQuery(ALL_PICKLE_QUERY);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return null;
   if (error) return <div>Error</div>;
   return (
     <NewsFeedWrapper>

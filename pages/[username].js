@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import withData from '../lib/apollo';
 import styled from 'styled-components';
+import ProfilePageContainer from '../components/UserProfile/ProfilePageContainer';
 
 const ProfilePageWrapper = styled.div`
   width: ${props => props.theme.mainWidth};
@@ -19,7 +20,7 @@ const BrowsePage = () => {
         <title>Pickle | {router.query.username}</title>
       </Head>
       <ProfilePageWrapper>
-        <h1>{router.query.username}</h1>
+        <ProfilePageContainer username={router.query.username} />
       </ProfilePageWrapper>
     </div>
   );
