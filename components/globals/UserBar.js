@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import { setRem } from '../../lib/styles';
@@ -14,7 +15,9 @@ const UserBarWrapper = styled.div`
     border-radius: 50%;
   }
 
-  p {
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.primaryFontColor};
     justify-self: start;
     margin-left: ${setRem(16)};
   }
@@ -24,9 +27,9 @@ const UserBar = ({ user }) => {
   return (
     <UserBarWrapper>
       <img src={user.imgUrl} alt={user.name} />
-      <div>
-        <p>{user.username}</p>
-      </div>
+      <Link href={`/${user.username}`}>
+        <a>{user.username}</a>
+      </Link>
     </UserBarWrapper>
   );
 };

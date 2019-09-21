@@ -44,7 +44,7 @@ const CommentForm = () => {
   return (
     <CommentFormWrapper onSubmit={handleSubmit}>
       <input type="text" placeholder="Add a comment..." value={text} onChange={handleChange} />
-      <button type="submit" disabled={!text} className={!!text && 'blue'}>
+      <button type="submit" disabled={!text} className={!!text ? 'blue' : ''}>
         Post
       </button>
     </CommentFormWrapper>
