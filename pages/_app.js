@@ -22,7 +22,6 @@ class MyApp extends App {
 
   render() {
     const { Component, apollo, pageProps } = this.props;
-
     return (
       <ThemeProvider theme={lightTheme}>
         <ApolloProvider client={apollo}>

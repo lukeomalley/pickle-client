@@ -8,7 +8,6 @@ import ProfilePageContainer from '../components/UserProfile/ProfilePageContainer
 const ProfilePageWrapper = styled.div`
   width: ${props => props.theme.mainWidth};
   margin: 0 auto;
-  text-align: center;
 `;
 
 const BrowsePage = () => {

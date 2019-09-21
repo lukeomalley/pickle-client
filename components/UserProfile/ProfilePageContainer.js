@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 
 import USER_QUERY from '../../queries/USER_QUERY';
 import UserProfileHeader from './UserProfileHeader';
+import NewsFeedContainer from '../NewsFeed/NewsFeedContainer';
 import Hr from '../globals/HorizontalRule';
 
 const ProfilePageContainer = ({ username }) => {
@@ -12,7 +13,8 @@ const ProfilePageContainer = ({ username }) => {
   return (
     <>
       <UserProfileHeader user={data.user} />
-      <Hr />
+      <Hr marginBottom={20} />
+      <NewsFeedContainer pickles={data.user.pickles} />
     </>
   );
 };
