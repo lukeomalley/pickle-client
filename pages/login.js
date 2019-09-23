@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import withData from '../lib/apollo';
+import { useMutation, useApolloClient } from '@apollo/react-hooks';
 import styled from 'styled-components';
+
+import SIGN_IN_USER from '../mutations/SIGN_IN_USER';
 
 const LoginPageWrapper = styled.div`
   width: ${props => props.theme.mainWidth};
@@ -9,9 +12,26 @@ const LoginPageWrapper = styled.div`
 `;
 
 const LoginPage = () => {
-  const clientID = '7786866812bb4554950210094f119843';
-  const redirectUri = 'http://localhost:3000/api/v1/auth/instagram/callback';
+  const client = useApolloClient();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
+  const [signInUser, { loading, error }] = useMutation(SIGN_IN_USER, {
+    onCompleted({ data }) {
+      console.log(data);
+    },
+  });
+
+  const handleLogin = e => {
+    e.preventDefault();
+    signInUser({ variables: { username, password } });
+
+    setUsername('');
+    setPassword('');
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>An error occurred</p>;
   return (
     <div>
       <Head>
@@ -19,11 +39,23 @@ const LoginPage = () => {
       </Head>
       <LoginPageWrapper>
         <h1>Login</h1>
-        <a
-          href={`https://api.instagram.com/oauth/authorize/?client_id=${clientID}&redirect_uri=${redirectUri}&response_type=code`}
-        >
-          Login with Instagram
-        </a>
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <button type="submit">Login</button>
+        </form>
       </LoginPageWrapper>
     </div>
   );
